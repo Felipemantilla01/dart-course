@@ -1,23 +1,42 @@
 void main(List<String> args) {
-  String correo;
-  String mensaje;
+  List<int> intList = [1, 2, 4, 6, 12];
 
-  correo = 'felipemantilla@outlook.es';
+  print(intList);
 
-  print(correo.contains('@'));
-  print(correo.endsWith('.es'));
+  intList.forEach((element) {
+    print(element);
+  });
 
-  print(correo.replaceAll('felipe', 'andres'));
+  for (var i in intList) {
+    print(i);
+  }
 
-  StringBuffer buffer = StringBuffer();
+  print('hola : ${intList[2]}');
+  print('${intList}');
 
-  buffer.write('hola');
+  intList.add(3);
 
-  buffer.writeAll(['objects', 'mundi']);
+  intList.addAll([3, 6, 2]);
 
-  print(buffer);
+  intList.insert(3, 55);
 
-  buffer.clear();
+  print(intList);
 
-  print(buffer);
+  intList.remove(3);
+
+  print(intList);
+
+  intList.removeAt(0);
+
+  print(intList);
+
+  intList.removeWhere((element) => element == 55);
+
+  print(intList);
+
+  print(intList.asMap());
+
+  List menoresDef5 = intList.where((element) => element < 5).toList();
+
+  print(menoresDef5);
 }
