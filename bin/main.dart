@@ -1,14 +1,23 @@
-void main() {
-  //Comentario de una sola linea
+void main(List<String> args) {
+  String correo;
+  String mensaje;
 
-  /**
-   * @params
-   * @kg -> parametro a convertir
-   */
+  correo = 'felipemantilla@outlook.es';
 
-  /* 
+  print(correo.contains('@'));
+  print(correo.endsWith('.es'));
 
-   Hola mundo, comentarios en bloque 
+  print(correo.replaceAll('felipe', 'andres'));
 
-  */
+  StringBuffer buffer = StringBuffer();
+
+  buffer.write('hola');
+
+  buffer.writeAll(['objects', 'mundi']);
+
+  print(buffer);
+
+  buffer.clear();
+
+  print(buffer);
 }
