@@ -1,16 +1,15 @@
 void main(List<String> args) {
-  for (int i = 0; i <= 10; i++) {
-    print('Number $i');
-    if (i == 7) {
-      break;
-    }
-  }
+  int option = 2;
 
-  for (int i = 0; i <= 10; i++) {
-    print('Number $i');
-    if (i == 8) {
-      continue;
-    }
-    print('end iteration');
+  switch (option) {
+    case 1:
+      print('This is the option $option');
+      break;
+    case 2:
+      print('This is the option $option');
+      break;
+    default:
+      print('Option $option isn\'t available');
+      break;
   }
 }
