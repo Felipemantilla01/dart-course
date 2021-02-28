@@ -1,7 +1,12 @@
 void main(List<String> args) {
-  dynamic cadena = 'hola mundo Felipe Mantilla';
-  cadena = 3;
-  (cadena is String) ? print(cadena) : print('cadena isn\'t a string ');
+  List<int> listInt = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  (cadena is! String) ? print('cadena isn\'t a string ') : print(cadena);
+  listInt
+    ..clear()
+    ..add(10)
+    ..addAll([15, 2])
+    ..remove(2)
+    ..removeWhere((element) => element == 15);
+
+  print(listInt);
 }
