@@ -1,16 +1,7 @@
 void main(List<String> args) {
-  int a = 3, b = 5;
+  dynamic cadena = 'hola mundo Felipe Mantilla';
+  cadena = 3;
+  (cadena is String) ? print(cadena) : print('cadena isn\'t a string ');
 
-  print('operadores relacionales');
-  print(' $a == $b : ${a == b}');
-  print(' $a != $b : ${a != b}');
-  print(' $a < $b : ${a < b}');
-  print(' $a > $b : ${a > b}');
-  print(' $a <= $b : ${a <= b}');
-  print(' $a >= $b : ${a >= b}');
-  print('operadores logicos');
-
-  print('!true : ${!true}');
-  print('a < b && a != b : ${a < b && a != b}');
-  print('a < b || a != b : ${a < b || a != b}');
+  (cadena is! String) ? print('cadena isn\'t a string ') : print(cadena);
 }
