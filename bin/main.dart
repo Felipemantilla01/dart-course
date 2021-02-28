@@ -1,7 +1,17 @@
 void main(List<String> args) {
-  var list = ['rojo', 'azul', 'amarillo'];
+  bool level1 = true;
 
-  list.forEach((color) {
-    print(color);
-  });
+  if (level1) {
+    bool level2 = true;
+    if (level2) {
+      bool level3 = false;
+      if (level3) {
+        print(level1);
+        print(level2);
+        print(level3);
+      }
+    }
+  }
+
+  //print(level3) //note this error
 }
