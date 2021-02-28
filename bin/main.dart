@@ -1,15 +1,16 @@
 void main(List<String> args) {
-  List<int> listInt = [1, 2, 3, 4, 5, 6, 7];
-  int counter = 0;
-
-  while (counter < listInt.length) {
-    print('couter $counter');
-    counter++;
+  for (int i = 0; i <= 10; i++) {
+    print('Number $i');
+    if (i == 7) {
+      break;
+    }
   }
 
-  counter = 10;
-
-  do {
-    print('counter must be minor that 10');
-  } while (counter < 10);
+  for (int i = 0; i <= 10; i++) {
+    print('Number $i');
+    if (i == 8) {
+      continue;
+    }
+    print('end iteration');
+  }
 }
