@@ -1,15 +1,6 @@
 void main(List<String> args) {
-  int option = 2;
-
-  switch (option) {
-    case 1:
-      print('This is the option $option');
-      break;
-    case 2:
-      print('This is the option $option');
-      break;
-    default:
-      print('Option $option isn\'t available');
-      break;
+  for (int i = 0; i <= 10; i++) {
+    assert(i < 5);
+    print('cout $i');
   }
 }
