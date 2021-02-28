@@ -1,15 +1,16 @@
 void main(List<String> args) {
-  double celcius, farenheit = 54;
+  int a = 3, b = 5;
 
-  int a = 10, b = 3, residuo;
+  print('operadores relacionales');
+  print(' $a == $b : ${a == b}');
+  print(' $a != $b : ${a != b}');
+  print(' $a < $b : ${a < b}');
+  print(' $a > $b : ${a > b}');
+  print(' $a <= $b : ${a <= b}');
+  print(' $a >= $b : ${a >= b}');
+  print('operadores logicos');
 
-  celcius = (farenheit - 32) / 1.8;
-  print('grados celcius : $celcius');
-  celcius++;
-  print('grados celcius : $celcius');
-  celcius += 10;
-  print('grados celcius : $celcius');
-
-  residuo = a % b;
-  print('residuo : $residuo');
+  print('!true : ${!true}');
+  print('a < b && a != b : ${a < b && a != b}');
+  print('a < b || a != b : ${a < b || a != b}');
 }
