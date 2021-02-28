@@ -1,11 +1,7 @@
 void main(List<String> args) {
-  bool acceso = true;
-  int costo = 10;
-  String cupon = 'gratis';
+  List<String> lisString = ['Colombia', 'Peru', 'Nicaragua', 'El Salvador'];
 
-  if ((acceso && costo >= 20) || cupon == 'gratis') {
-    print('Bienvenido al curso de dart');
-  } else {
-    print('no tienes acceso');
+  for (var i = 0; i < lisString.length; i++) {
+    print(lisString[i]);
   }
 }
