@@ -1,7 +1,15 @@
 void main(List<String> args) {
-  List<String> lisString = ['Colombia', 'Peru', 'Nicaragua', 'El Salvador'];
+  List<int> listInt = [1, 2, 3, 4, 5, 6, 7];
+  int counter = 0;
 
-  for (var i = 0; i < lisString.length; i++) {
-    print(lisString[i]);
+  while (counter < listInt.length) {
+    print('couter $counter');
+    counter++;
   }
+
+  counter = 10;
+
+  do {
+    print('counter must be minor that 10');
+  } while (counter < 10);
 }
