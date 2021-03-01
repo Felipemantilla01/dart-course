@@ -2,42 +2,31 @@ void main(List<String> args) {
   //Automovil auto = new Automovil(); // esto no es posible porque la clase es abstracta;
 
   Carro carro = new Carro();
+  carro.turbo = true;
   carro.cilindros = 10;
-  carro.velocidad();
-
-  Trailer trailer = new Trailer();
-  trailer.cilindros = 3;
-  trailer.velocidad();
+  carro.velocidad('200km/h');
+  carro.infoCarro();
 }
 
-abstract class Automovil {
+class Automovil {
   int cilindros;
   int llantas;
-  void velocidad();
-}
-
-class Carro implements Automovil {
-  @override
-  int cilindros;
-
-  @override
-  int llantas;
-
-  @override
-  void velocidad() {
-    print('200 km/h');
+  int puertas;
+  String combustible;
+  void velocidad(String velocidad) {
+    print('Velocidad $velocidad');
   }
 }
 
-class Trailer implements Automovil {
-  @override
-  int cilindros;
+class Carro extends Automovil {
+  bool turbo;
+  void infoCarro() {
+    print('Turbo $turbo');
+  }
 
   @override
-  int llantas;
-
-  @override
-  void velocidad() {
-    print('300 km/h');
+  void velocidad(String velocidad) {
+    super.velocidad(velocidad);
+    print('Sobreescritura de metodos');
   }
 }
