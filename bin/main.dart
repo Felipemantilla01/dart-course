@@ -1,31 +1,19 @@
-import 'dart:convert';
-import 'dart:io';
+void main(List<String> args) {
+  var hoy = DateTime.now();
 
-void main(List<String> args) async {
-  File('/home/felipemantilla/Documents/Work/Keybe/LEARN/Dart/hello_world/archivo.txt')
-      .createSync();
+  print(
+      'Hoy : ${hoy.day} - ${hoy.month} - ${hoy.year} : ${hoy.hour}:${hoy.minute}:${hoy.second}');
 
-  File file = File(
-      '/home/felipemantilla/Documents/Work/Keybe/LEARN/Dart/hello_world/archivo.txt');
+  var nuevaFecha = hoy.add(Duration(days: 3, hours: 5, seconds: 35));
 
-  String contenido;
-  if (await file.exists()) {
-    contenido = await file.readAsString();
-    print(contenido);
+  print(
+      'Nueva fecha : ${nuevaFecha.day} - ${nuevaFecha.month} - ${nuevaFecha.year} : ${nuevaFecha.hour}:${nuevaFecha.minute}:${nuevaFecha.second}');
 
-    await file.writeAsString('Dart');
-    contenido = await file.readAsString();
-    print(contenido);
+  var diferencia = nuevaFecha.difference(hoy);
 
-    //usign Ascii and Base64
+  print(
+      'Diferencia : Dias: ${diferencia.inDays} - Horas : ${diferencia.inHours}');
 
-    var base64 = base64Encode(file.readAsBytesSync());
-    print(base64);
-
-    print(base64Decode(base64));
-
-    var asciiDecoder = AsciiDecoder();
-
-    print(asciiDecoder.convert(base64Decode(base64)));
-  }
+  print('la fecha nueva es menor a hoy ${nuevaFecha.isBefore(hoy)}');
+  print('la fecha nueva es mayor a hoy ${nuevaFecha.isAfter(hoy)}');
 }
