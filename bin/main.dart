@@ -1,30 +1,31 @@
-import 'dart:async';
 import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'package:test/test.dart';
+import 'dart:io';
 
 void main(List<String> args) async {
-  print('Elaborando peticion');
-  try {
-    print('Status code : ${await getStatusCode()}');
-  } catch (e) {
-    print(e);
-  }
-}
+  File('/home/felipemantilla/Documents/Work/Keybe/LEARN/Dart/hello_world/archivo.txt')
+      .createSync();
 
-Future<String> getStatusCode() async {
-  Completer completer = new Completer<String>();
+  File file = File(
+      '/home/felipemantilla/Documents/Work/Keybe/LEARN/Dart/hello_world/archivo.txt');
 
-  try {
-    http.Response response =
-        await http.get('https://jsonplaceholder.typicode.com/useras/1');
-    if (response.statusCode == 200) {
-      completer.complete('Peticion http realizada correctamente');
-    } else {
-      completer.completeError('Error en la peticion http');
-    }
-  } catch (e) {
-    completer.completeError('Error de conexion');
+  String contenido;
+  if (await file.exists()) {
+    contenido = await file.readAsString();
+    print(contenido);
+
+    await file.writeAsString('Dart');
+    contenido = await file.readAsString();
+    print(contenido);
+
+    //usign Ascii and Base64
+
+    var base64 = base64Encode(file.readAsBytesSync());
+    print(base64);
+
+    print(base64Decode(base64));
+
+    var asciiDecoder = AsciiDecoder();
+
+    print(asciiDecoder.convert(base64Decode(base64)));
   }
-  return completer.future;
 }
