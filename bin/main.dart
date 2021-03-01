@@ -1,18 +1,9 @@
+import 'triangulo.dart';
+
 void main(List<String> args) {
-  var datos = {'nombre': 'Felipe', 'apellido': 'Mantilla'};
+  Triangulo triangulo = new Triangulo();
+  triangulo.base = 10;
+  triangulo.altura = 20;
 
-  Persona persona = new Persona.asignarDatos(datos);
-
-  print('Persona ${persona.nombre} - ${persona.apellido}');
-}
-
-class Persona {
-  String nombre;
-  String apellido;
-
-  Persona({this.nombre, this.apellido});
-
-  factory Persona.asignarDatos(Map jsonMap) {
-    return Persona(nombre: jsonMap['nombre'], apellido: jsonMap['apellido']);
-  }
+  print('Area ${triangulo.area} ');
 }
